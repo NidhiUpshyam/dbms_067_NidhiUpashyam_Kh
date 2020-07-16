@@ -1,0 +1,164 @@
+
+	SQL Exercise 1
+..............................................................................................
+
+1)
+
+
+create table SEMP
+	(
+		EMPNO CHAR(4),
+		EMPNAME CHAR(20),
+		BASIC FLOAT(9,2),
+		DEPTNO CHAR(2),
+		DEPTHEAD CHAR(4)
+	);
+
+..................................................................................................
+
+2)
+	
+
+CREATE TABLE SDEPT
+	(
+		DEPTNO CHAR(2),
+		DEPTNAME CHAR(15)
+	);
+....................................................................................................
+
+3)
+
+insert into SDEPT
+	values('10','Development');
+
+insert into SDEPT
+	values('20','Training');
+
+.........................................................................................................
+
+
+4)
+
+insert into SEMP(empno,empname,basic,deptno)
+	values('0001','SUNIL','6000','10');
+
+insert into SEMP(empno,empname,basic,deptno)
+	values('0002','HIREN','8000','20');
+
+insert into SEMP(empno,empname,basic,deptno,depthead)
+	values('0003','ALI','4000','10','0001');
+
+insert into SEMP(empno,empname,basic,depthead)
+	values('0004','GEORGE','6000','0002');
+
+........................................................................................................
+
+CREATE TABLE S
+	(
+		`S#` VARCHAR(10),
+		SNAME CHAR(20),
+		STATUS INT(10),
+		CITY VARCHAR(10)
+	);
+
+........................................................................................................
+
+CREATE TABLE P
+	(
+		`P#` VARCHAR(10),
+		PNAME CHAR(10),
+		COLOR CHAR(10),
+		WEIGHT VARCHAR(10),
+		CITY VARCHAR(10)
+	);
+
+..........................................................................................................
+
+CREATE TABLE J
+	(
+		`J#` VARCHAR(10),
+		 JNAME CHAR(10),
+		 CITY VARCHAR(10)
+	);
+.........................................................................................................
+
+
+CREATE TABLE SPJ
+	(
+		`S#` VARCHAR(10),
+		`P#` VARCHAR(10),
+		`J#` VARCHAR(10),
+		Qty INT(10)
+	);
+.....................................................................................................
+
+
+a) Insert in S
+
+insert into S
+	values('S1','ZACH','10','London');
+
+insert into S
+	values('S2','CLAY','20','ATHENS');
+
+insert into S
+	values('S3','HANNAH','30','PARIS');
+
+...............................................................................................................
+
+
+b) Insert in P 
+
+insert into P
+	values('P1','JUSTIN','RED','1000','London');
+
+insert into P
+	values('P2','JESICCA','BLACK','2000','ATHENS');
+
+insert into P
+	values('P3','BRYCE','GREEN','3000','PARIS');
+
+
+.........................................................................................................
+
+c) Insert into J
+
+
+insert into J
+	values('J1','JEFF','London');
+
+ insert into J
+	values('J2','TONY','ATHENS');
+
+insert into J
+	values('J3','BRAD','PARIS');
+
+..........................................................................................................
+d) Insert into SPJ
+
+
+insert into SPJ
+	values('S1','P1','J1','10');
+
+insert into SPJ
+	values('S2','P2','J2','20');
+
+insert into SPJ
+	values('S3','P3','J3','30');	
+
+
+....................................................................................................
+##SELECT QUERIES##
+
+
+5) SELECT * FROM S;
+
+6) SELECT `S#`,SNAME FROM S;
+
+7) SELECT PNAME,COLOR FROM P WHERE CITY='London';
+
+8) SELECT * FROM S WHERE CITY='London';
+
+9) SELECT * FROM S WHERE CITY='PARIS' OR CITY='ATHENS';
+
+10) SELECT * FROM P WHERE CITY='ATHENS';
