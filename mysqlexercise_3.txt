@@ -62,7 +62,7 @@ Ans:    select sname , case
 	       when status = 30 then 'Thirty'
 	       when status = 40 then 'Fourty'
 	       when status = 50 then 'Fifty'
-       	when status = 60 then 'Sixty'
+       	       when status = 60 then 'Sixty'
 	       when status = 70 then 'Seventy'
 	       when status = 80 then 'Eighty'
 	       when status = 90 then 'Ninety'
