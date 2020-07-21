@@ -1,0 +1,94 @@
+Exercise-4
+......................................................................
+
+1) Display the minimum Status in the Supplier table. 
+
+Ans: select min(status) from supplier;
+
+
+.......................................................................
+
+2) Display the maximum Weight in the Parts table
+
+Ans: select max(weight) from parts;
+
+
+.......................................................................
+
+3) Display the average Weight of the Parts. 
+
+Ans: select avg(weight) from parts;
+
+
+...........................................................................
+
+4) Display the total Quantity sold for part ‘P1’. 
+
+Ans: select `P#`,sum(Qty) from spj where `P#`= 'P1';
+
+.........................................................................
+
+5) Display the total Quantity sold for each part. 
+
+Ans: select `P#`,sum(Qty) from spj
+group by `P#`;
+
+
+.............................................................................
+
+6) Display the average Quantity sold for each part. 
+
+Ans: select `P#` ,avg(Qty) from spj group by `P#`;
+
+..........................................................................
+
+7) Display the maximum Quantity sold for each part, provided the maximum Quantity is greater than 800. 
+
+Ans:  select `P#`,max(Qty>800) from spj group by `P#`;
+
+...........................................................
+
+8) Display the Status and the count of Suppliers with that Status. 
+
+Ans:  select status,count(`S#`) from s;
+      
+
+..................................................................
+
+9) Display the count of Projects going on in different cities. 
+
+Ans:  select city,count(`J#`) from j group by city;
+
+
+.........................................................................
+
+10) What is the difference between COUNT(Status) and COUNT(*) ? 
+
+Ans:  COUNT(Status):
+    ------------------------
+ 
+	COUNT(Status) evaluates the expression for each row in a set and returns the number of rows         having a non-null values.
+	
+       COUNT(*):
+    ------------------------
+ 
+	COUNT(*) counts the number of items in a set. It includes NULL and duplicate values.
+        It returns total number of rows in the table.
+
+...........................................................................
+
+11) Display the Status and the Count of Suppliers with that Status in the following format
+as shown below:-
+
+Status   Count
+Ten        1
+Twenty     2
+Thirty     3 
+
+Ans:  select case
+      when status = 10 then 'Ten'
+      when status = 20 then 'Twenty'
+      when status = 30 then 'Thirty'
+      end as status ,count(`S#`) "count"
+      from s group by status;
+
