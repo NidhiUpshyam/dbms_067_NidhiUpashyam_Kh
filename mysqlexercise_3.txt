@@ -54,6 +54,24 @@ Ans: select * from s where soundex (sname)=soundex('BLOKE');
 
 .................................................................................................
 
+9) Display the Supplier name and the status (as Ten, Twenty, Thirty, etc.). 
+
+Ans:    select sname , case
+	       when status = 10 then 'Ten'
+	       when status = 20 then 'Twenty'
+	       when status = 30 then 'Thirty'
+	       when status = 40 then 'Fourty'
+	       when status = 50 then 'Fifty'
+       	when status = 60 then 'Sixty'
+	       when status = 70 then 'Seventy'
+	       when status = 80 then 'Eighty'
+	       when status = 90 then 'Ninety'
+	       when status = 100 then 'Hundred'
+	       end as status
+	       from s;
+ 
+ .......................................................................................................
+
 10) Display the current day (e.g. Thursday). 
 
 Ans: SELECT dayname("2020-07-20");
