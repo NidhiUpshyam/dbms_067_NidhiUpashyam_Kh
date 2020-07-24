@@ -1,0 +1,69 @@
+Exercise-5
+................................................................................
+1) Display the Supplier name and the Quantity sold. 
+
+Ans:  select sname,qty from s , spj where s.`s#`= spj.`s#`;
+
+..........................................................................
+
+
+2) Display the Part name and Quantity sold. 
+
+Ans: select pname , qty from p , spj where p.`p#`= spj.`p#`;
+
+...................................................................................
+
+3) Display the Project name and Quantity sold. 
+
+Ans:  select jname , qty from j , spj where j.`j#`= spj.`j#`;
+
+...................................................................................
+
+4) Display the Supplier name, Part name, Project name and Quantity sold. 
+
+Ans: select sname,pname,jname,qty from s,p,j,spj where s.`s#`= spj.`s#` and p.`p#` = spj.`p#` and j.`j#` = spj.`j#`; 
+
+....................................................................................
+
+5) Display the Supplier name, Supplying Parts to a Project in the same City. 
+
+Ans: select sname,pname,jname from s,p,j where s.city= p.city and p.city=j.city;
+
+
+.....................................................................................
+
+6) Display the Part name that is ‘Red’ is color, and the Quantity sold. 
+
+Ans: select p.pname,spj.qty from p,spj where spj.`p#` =  p.`p#` and p.color = 'Red';
+
+........................................................................................
+
+7) Display all the Quantity sold by Suppliers with the Status = 20. 
+
+Ans: select qty , `s#` from spj where `s#` = (select `s#` from s where status=20);
+
+....................................................................................
+
+8) Display all the Parts and Quantity with a Weight > 14. 
+
+Ans: select `p#`, qty from spj where `p#` in (select `p#` from p where weight>14);
+
+......................................................................................
+
+
+9) Display all the Project names and City, which has bought more than 500 Parts. 
+
+Ans: select pname,city from p where `p#` in (select `p#` from spj where qty>500);
+
+.......................................................................................
+
+
+10) Display all the Part names and Quantity sold that have a Weight less than 15. 
+
+Ans: select p.pname, spj.qty from p,spj where spj.`p#` = (select p.pname from p where weight<15);
+......................................................................................
+
+11) Display all the Employee names and the name of their Managers. 
+
+Ans: SELECT A.EMPNAME,B.EMPNAME AS 'MANAGER' FROM SEMP A,SEMP B
+	WHERE A.DEPTHEAD = B.EMPNO;
